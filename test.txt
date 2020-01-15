@@ -1,4 +1,7 @@
 Hello Git! 123
 It's new line.
+<<<<<<< HEAD
 And another one! 
 New string.
+=======
+>>>>>>> parent of 1867884... Third commit
