@@ -1,3 +1,4 @@
 Hello Git! 123
 It's new line.
-And another one!
+And another one! 
+New string.
