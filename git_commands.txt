@@ -1,10 +1,10 @@
-git reset [--soft|--mixed(default)|--hard][commit]
+#git reset [--soft|--mixed(default)|--hard][commit]
 //return your repository to specific commit
 --hard - deletes commits after [commit]
 --mixed - change commits after [commit] into unstaged (red)
 --soft - change commits after [commit] into staged (green)
 
-git checkout - используется для перемещения между коммитами,
+#git checkout - используется для перемещения между коммитами,
                 версиями файлов и ветками
 git checkout [hash] - перемежение к коммиту
 git checkout HEAD^^ / ~2
@@ -12,3 +12,10 @@ git checkout HEAD^^ / ~2
 //коммитить в detached mode нельзя (коммиты будут удаляться)
 //вернуться к актуальному состоянию - git checkout <имя ветки>
 git checkout [hash] --file1 file 2 - ветнуть состояние файла к коммиту
+git checkout --file1 - откатить до последнего коммитами
+                        удалит все untracked изменения
+git checkout --. - все файлы как выше
+//если нужно откатить tracked изменения (была вызвана комманда add)
+//git reset (--mixed HEAD) - сначала переведи все изменения в untracked
+//git checkout --. - затем удали все untracked изменения
+
