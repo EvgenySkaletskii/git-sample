@@ -1,0 +1,5 @@
+git reset [--soft|--mixed(default)|--hard][commit]
+//return your repository to specific commit
+--hard - deletes commits after [commit]
+--mixed - change commits after [commit] into unstaged (red)
+--soft - change commits after [commit] into staged (green)
