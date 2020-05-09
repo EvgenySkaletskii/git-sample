@@ -3,3 +3,9 @@ git reset [--soft|--mixed(default)|--hard][commit]
 --hard - deletes commits after [commit]
 --mixed - change commits after [commit] into unstaged (red)
 --soft - change commits after [commit] into staged (green)
+
+git checkout - используется для перемещения между коммитами,
+                версиями файлов и ветками
+git checkout [hash] - перемежение к коммиту
+git checkout HEAD^^ / ~2
+//при этом коммиты не удаляются
