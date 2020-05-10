@@ -53,4 +53,4 @@ SSH - позволяет безопасно передавать данне в �
 
 https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
 //инструкция по подключению
-123
+1234
