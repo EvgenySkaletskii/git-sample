@@ -60,3 +60,26 @@ https://help.github.com/en/github/authenticating-to-github/connecting-to-github-
 
 git clone ссылка на репощиторий https/ssh
 
+#BRANCHES
+
+git branch branch_name - создать новуб ветку
+git branch - посмотреть текущую ветку
+git branch -r - посмотреть удалённые ветки
+git branch -d branch_name - удалить ветку
+git checkout branch_name - переход между ветками
+git merge branch_name - вмерджить branch_name в текущую ветку
+
+//удалённые ветки хранятся у тебя на компе
+//когда ты делаешь pull ты скачиваешь ветку из origin и обновляешь
+//СВОЮ удалённую ветку на компе e.g. origin/master
+//затем эта ветка сливается с ТВОЕЙ веткой master
+
+!git pull = git fetch + git merge origin/master
+git fetch - скачивает ветки с origin но не актуализирует локалльные ветки
+
+#git rebase - делает то же что и merge только не оставляет merge commit
+//merge -безопаснее и очевиднее
+//git rebase - делает передазирование коммитов
+//актуализирует ветку в которой ты находишься коммитами из другой ветки
+//таким образом при последующем merge не будет создавать merge commit
+//а произойдет fastforward слияние
