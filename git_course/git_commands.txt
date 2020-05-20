@@ -1,0 +1,96 @@
+#git reset [--soft|--mixed(default)|--hard][commit]
+//return your repository to specific commit
+--hard - deletes commits after [commit]
+--mixed - change commits after [commit] into unstaged (red)
+--soft - change commits after [commit] into staged (green)
+
+#git checkout - используется для перемещения между коммитами,
+                версиями файлов и ветками
+git checkout [hash] - перемежение к коммиту
+git checkout HEAD^^ / ~2
+//при этом коммиты не удаляются
+//коммитить в detached mode нельзя (коммиты будут удаляться)
+//вернуться к актуальному состоянию - git checkout <имя ветки>
+git checkout [hash] --file1 file 2 - ветнуть состояние файла к коммиту
+git checkout --file1 - откатить до последнего коммитами
+                        удалит все untracked изменения
+git checkout --. - все файлы как выше
+//если нужно откатить tracked изменения (была вызвана комманда add)
+//git reset (--mixed HEAD) - сначала переведи все изменения в untracked
+//git checkout --. - затем удали все untracked изменения
+
+#git commit //параметры
+git commit -a -m "Коммент" - сделать add перед commit
+//ВАЖНОЕ отличие - эта комманда не добавляет НОВЫЕ файлы в tracked.
+//А добавляет только modified файлы 
+
+git commit --amend -m"Новый коммент" - обновляет последний коммит
+//дополняет последний коммит свежими изменениями и меняет коммент
+//новый коммит не создается!
+
+
+#git clean - откатывает изменения в новых созданных файлах
+// сначала git clean -n - посмотреть какие изменения будут удалены
+// потом git clean -f - удалить файлы
+
+#REMOTE REPOSITORIES
+git remote -v - посмотреть список удалённых репозиториев
+
+git add rep_name per_adress -добавить новый репощиторий 
+//на компе к нему будем обращаться по названию - rep_name
+
+git remote remove rep_name - удаление репозитория с именем 
+
+git push rep_name branch - отправляем на удалённый репозиторий 
+
+git pull rep_name branch - скачать изменений из ремоута
+
+#SSH - SECURE SHELL
+SSH - сетевой протокол, позволяющий производить управление 
+//операционной системой 
+SSH - позволяет безопасно передавать данне в незащищенной среде
+//тебе нужны публичный и приватный ключи
+
+https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
+//инструкция по подключению
+//затем в settings github добавить ssh ключ кот копиров коммандой из тинструкции
+//затем подключить remote через ssh ссылку, а https ссылку удали
+
+#git clone - копировать удалённый репозиторий
+
+git clone ссылка на репощиторий https/ssh
+
+#BRANCHES
+
+git branch branch_name - создать новуб ветку
+git branch - посмотреть текущую ветку
+git branch -r - посмотреть удалённые ветки
+git branch -d branch_name - удалить ветку
+git checkout branch_name - переход между ветками
+git merge branch_name - вмерджить branch_name в текущую ветку
+
+//удалённые ветки хранятся у тебя на компе
+//когда ты делаешь pull ты скачиваешь ветку из origin и обновляешь
+//СВОЮ удалённую ветку на компе e.g. origin/master
+//затем эта ветка сливается с ТВОЕЙ веткой master
+
+!git pull = git fetch + git merge origin/master
+git fetch - скачивает ветки с origin но не актуализирует локалльные ветки
+
+#git rebase - нужна для merge чтобы не оставлять merge commit
+//merge -безопаснее и очевиднее
+//git rebase - делает передазирование коммитов
+//ПЕРЕТЯГИВАЕТ ответвление(начало) твоей ветки на последний коммит
+//актуализирует ветку в которой ты находишься коммитами из другой ветки
+//таким образом при последующем merge не будет создавать merge commit
+//а произойдет fastforward слияние
+//!при конфликтах!
+git rebase --continue - продолжить
+git rebase --abort - отменить
+
+#git cherry-pick [hash]- взять из другой ветки один полезный коммит
+//нужно находиться в той ветке КУДА ты хочешь пренести этот коммит
+git cherry-pick --edit - поменять сообщение коммитами
+git cherry-pick --no-commit - перенести изменения из коммита в отслеживаемую зону
+//нужно когда ты хочешь внести изменения в код прежде чем коммитить
+//или когда ты забираешь несколько коммитов
