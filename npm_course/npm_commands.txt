@@ -1,0 +1,42 @@
+
+#Package - директория с одним или несколькими модулями и файлом package.json
+
+#Packeage manager - инструмент, позволяющий управлять процессом установки, настройки 
+и обновления пакетов
+
+#nmp - node package manager - единый стандарт для серверного и клиентского JS 
+
+#Package.json - это файл "манифест", который содердит мета-данные, описываюшие
+ваш пакет: его имя, версию, зависимости и прочее
+
+#Dependencies - это зависимости, т.е. прочие пакеты, без которых не будет 
+работать ваш пакет
+
+#devDependencies - неоходимы разработчику e.g webpack, gulp
+
+#установка npm - nodejs.org
+
+#проверка версии - nodejs -v
+
+#обновнение npm - sudo npm install npm@latest - g
+
+#справка - npm help
+
+#ПОИСК И УСТАНОВКА пакетов
+
+npm init - инициализация твоего пакета и создание package.json
+npm init -y - значения по умолчанию
+
+
+npm search jquery - search for package
+npm install <package_name> - install package
+npm install <package_name> -g - global install
+npm uninstall <package-name> - unistall package
+
+#ОБНОВЛЕНИЕ пакетов
+
+npm update <package-name> - обновить пакет
+npm outdated - показать устаревшие пакеты
+npm update - обновить все устаревшие пакеты (до wanted версии)
+
+#ДАЛЬШЕ  ПОНЯЛ
