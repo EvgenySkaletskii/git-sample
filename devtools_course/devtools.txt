@@ -33,3 +33,12 @@
 #SECURITY
 
 1. View SSL sertificates and information about site secure.
+
+#OTHER
+
+1. Emulate mobile resolutions
+2. Remote devices
+3. Sensors - geolocation
+4. Network conditions:
+    - changing user agent;
+    - network throttling.
