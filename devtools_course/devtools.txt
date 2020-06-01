@@ -1,0 +1,35 @@
+#ELEMENTS
+
+1. Inspect
+2. Edit html/css
+3. Поиск селекторов
+4. Hide elements, force states
+
+#CONSOLE
+
+1. Run JS code;
+2. View JS exceptions;
+3. setTimeout(function(){debugger;}, 5000); - pause;
+4. document.querySelectorAll('[your-selector]'); - search for selectors;
+
+#SOURCE
+
+1. Debug and update html and js files
+2. Overrides - для изменения кода локально на несколько перезагрузок
+
+#NETWORK
+
+1. Просмотр запросов к серверу и ответов от него
+2. Копирование запросов
+
+#PERFORMANCE
+
+1. Record and view profiles.
+
+#APPLICATION
+
+1. view and edit cookies, local and session storages.
+
+#SECURITY
+
+1. View SSL sertificates and information about site secure.
